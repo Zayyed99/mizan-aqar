@@ -135,7 +135,7 @@ form[data-mode=sale] .m-rent,form[data-mode=rent] .m-sale{display:none}
 .m-sl{fill:var(--acc2)}.m-oc{fill:var(--acc)}.m-ink{fill:var(--ink)}.m-pl{fill:light-dark(#3D7182,#24414B)}
 :root[data-theme=dark] .m-pl{fill:#24414B}
 footer.ft{background:var(--panel);border-top:1px solid var(--line)}
-.ft .cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);gap:28px}
+.ft .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:28px}
 .ft h3{font-size:15px;margin:0 0 8px}.ft p,.ft li{font-size:14px;color:var(--mute);margin:0 0 6px}.ft ul{margin:0;padding:0;list-style:none}
 .ft .logo{height:34px;margin-bottom:10px}
 .ft .copy{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;font-size:13px;color:var(--mute)}
@@ -208,28 +208,73 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 @media(max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.row{grid-template-columns:minmax(0,1fr) 130px}.wf .r{grid-template-columns:88px minmax(0,1fr) 92px;font-size:13px}.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.wf .bar{transition:none}}
+.tabs a svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.topbar nav.tabs{display:flex;gap:2px}
+.topbar nav.tabs a{gap:6px}
+.topbar nav.tabs a[aria-current="page"]{background:var(--panel);color:var(--accd);font-weight:600}
+[data-view][hidden]{display:none!important}
+.tasks{display:grid;gap:12px;margin-top:22px}
+.tasks a{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border:1.5px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);background:var(--bg)}
+.tasks a b{font-size:19px}.tasks a span{color:var(--mute);font-size:15px}
+.tasks a:hover{border-color:var(--acc)}
+.tasks a:first-child{background:var(--ink);border-color:var(--ink)}.tasks a:first-child b{color:var(--bg)}.tasks a:first-child span{color:var(--line)}
+.simple{display:flex;flex-direction:column;gap:2px;margin:14px 0}
+details.adv{border:1.5px solid var(--line);border-radius:12px;padding:0 14px;margin-top:6px}
+details.adv>summary{cursor:pointer;padding:14px 0;font-weight:600;min-height:44px}
+details.adv>summary small{display:block;font-weight:400;color:var(--mute);font-size:13px}
+details.adv[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px}
+.itop li:nth-child(n+6){display:none}.itop.all li{display:list-item}
+button.more{margin-top:8px;background:none;border:1.5px solid var(--line);border-radius:10px;padding:10px 16px;min-height:44px;color:var(--ink);font:inherit;cursor:pointer}
+@media(max-width:900px){
+.topbar nav.tabs{display:flex!important;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);justify-content:space-around;padding:4px 4px calc(4px + env(safe-area-inset-bottom))}
+.topbar nav.tabs a{flex:1;flex-direction:column;gap:2px;font-size:11.5px;padding:6px 2px;min-height:52px;justify-content:center}
+body{padding-bottom:72px}
+#mbar.on{bottom:84px!important}
+}
+.wrap.narrow{max-width:760px}
+a.back{display:inline-flex;align-items:center;gap:4px;color:var(--accd);text-decoration:none;font-size:15px;min-height:44px;margin-bottom:4px}
+a.back svg,.menu .chev{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(min-width:901px){a.back{display:none}}
+.menu{list-style:none;margin:16px 0 0;padding:0;border:1.5px solid var(--line);border-radius:14px;overflow:hidden}
+.menu li+li{border-top:1px solid var(--line)}
+.menu a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;text-decoration:none;color:var(--ink);min-height:64px;background:var(--bg)}
+.menu a:hover{background:var(--panel)}
+.menu b{display:block;font-size:17px}.menu small{display:block;color:var(--mute);font-size:14px;margin-top:2px}
+.menu .chev{color:var(--mute);flex:none}
+#about p{font-size:16px;line-height:1.8;color:var(--ink)}
+#about .lead2{font-size:20px;line-height:1.7;font-weight:600}
+#about h3{margin:28px 0 10px;font-size:19px}
+.princ{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.princ div{border:1.5px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.princ b{font-size:16px}.princ span{color:var(--mute);font-size:14.5px;line-height:1.7}
+.princ div::before{content:"";width:14px;height:14px;background:var(--acc);border-radius:2px}
+@media(max-width:600px){.princ{grid-template-columns:minmax(0,1fr)}}
+.src{margin:0;padding:0 18px 0 0;line-height:1.9;font-size:15px}
+#about a,.ft a,.trust a{color:var(--accd)}
+.ft li a{text-decoration:none}.ft li a:hover{text-decoration:underline}
+.trust{margin:14px 0 0;font-size:13.5px;color:var(--mute)}
+
+
 </style>
 </head>
 <body>
 <div class="topbar"><div class="in2"><a href="#top" aria-label="ميزان عقار، الرئيسية"><svg class="logo" role="img" aria-label="ميزان عقار" viewBox="-14.5 -86.0 353.3 113.0"><path d="M-8.5 15.0Q-4.1000000000000005 16.2 -1.2500000000000002 15.9Q1.6 15.600000000000001 3.2 14.200000000000001Q4.800000000000001 12.8 5.4 10.65Q6.0 8.5 6.0 6.0V-30.900000000000002L20.0 -34.0V6.0Q20.0 11.3 17.75 14.65Q15.5 18.0 11.9 19.55Q8.3 21.1 4.3500000000000005 21.0Q0.4 20.900000000000002 -3.05 19.35Q-6.5 17.8 -8.5 15.0Z M29.0 0.0Q29.0 0.0 28.0 -0.05Q27.0 -0.1 26.0 -0.6000000000000001Q25.0 -1.1 25.0 -2.3000000000000003V-76.9L39.0 -80.0V-14.0H47.0V0.0Z M79.0 0.0V-14.0H97.0V0.0ZM43.0 0.0V-14.0H71.0V-26.8L85.0 -34.0V-2.3000000000000003Q85.0 -1.1 84.0 -0.6000000000000001Q83.0 -0.1 82.0 -0.05Q81.0 0.0 81.0 0.0ZM68.1 -17.0Q63.5 -17.0 59.6 -19.3Q55.7 -21.6 53.35 -25.5Q51.0 -29.400000000000002 51.0 -34.0Q51.0 -38.7 53.35 -42.550000000000004Q55.7 -46.400000000000006 59.6 -48.7Q63.5 -51.0 68.2 -51.0Q72.8 -51.0 76.6 -48.7Q80.4 -46.400000000000006 82.7 -42.550000000000004Q85.0 -38.7 85.0 -34.0Q85.0 -29.3 82.7 -25.450000000000003Q80.4 -21.6 76.6 -19.3Q72.8 -17.0 68.1 -17.0ZM68.1 -31.0Q69.4 -31.0 70.2 -31.85Q71.0 -32.7 71.0 -34.0Q71.0 -35.300000000000004 70.2 -36.150000000000006Q69.4 -37.0 68.1 -37.0Q66.8 -37.0 65.9 -36.150000000000006Q65.0 -35.300000000000004 65.0 -34.0Q65.0 -32.7 65.9 -31.85Q66.8 -31.0 68.1 -31.0Z M91.0 0.0V-14.0H100.7Q100.3 -15.3 100.0 -16.9Q99.7 -18.5 99.9 -20.200000000000003Q100.1 -21.900000000000002 101.1 -23.400000000000002Q102.8 -26.1 106.0 -27.900000000000002Q109.2 -29.700000000000003 114.7 -31.200000000000003Q120.2 -32.7 128.7 -34.300000000000004L129.4 -33.4Q122.2 -30.1 119.05000000000001 -27.650000000000002Q115.9 -25.200000000000003 114.7 -23.200000000000003Q114.1 -22.200000000000003 114.25 -20.800000000000004Q114.4 -19.400000000000002 115.1 -18.400000000000002Q116.6 -16.6 118.15 -15.3Q119.7 -14.0 122.0 -14.0H146.0L140.1 0.0Z  M183.8 20.400000000000002Q180.1 20.400000000000002 176.55 19.150000000000002Q173.0 17.900000000000002 170.15 15.350000000000001Q167.3 12.8 165.65 9.0Q164.0 5.2 164.0 0.0Q164.0 -4.4 165.85 -8.4Q167.7 -12.4 170.6 -15.55Q173.5 -18.7 176.6 -20.700000000000003Q176.8 -18.8 176.3 -16.950000000000003Q175.8 -15.100000000000001 174.6 -13.5Q175.7 -13.0 176.45 -11.5Q177.2 -10.0 177.5 -8.4Q177.8 -6.800000000000001 177.5 -5.800000000000001Q176.5 -6.6000000000000005 175.5 -7.0Q174.5 -7.4 173.5 -7.4Q171.3 -7.4 169.7 -5.25Q168.1 -3.1 168.1 0.0Q168.1 4.4 169.8 7.3500000000000005Q171.5 10.3 174.2 11.700000000000001Q176.9 13.100000000000001 179.9 13.100000000000001Q183.1 13.100000000000001 186.0 11.55Q188.9 10.0 190.75 6.95Q192.6 3.9000000000000004 192.6 -0.6000000000000001Q192.6 -2.8000000000000003 191.95 -4.95Q191.3 -7.1000000000000005 190.35000000000002 -9.100000000000001Q189.4 -11.100000000000001 188.4 -12.600000000000001L195.2 -26.200000000000003Q199.0 -21.6 202.0 -15.450000000000001Q205.0 -9.3 205.0 -0.5Q205.0 6.300000000000001 201.9 11.0Q198.8 15.700000000000001 193.95 18.05Q189.1 20.400000000000002 183.8 20.400000000000002Z M233.5 -5.800000000000001Q232.9 -3.6 230.35000000000002 -1.9500000000000002Q227.8 -0.30000000000000004 224.35000000000002 0.3Q220.9 0.9 217.65 0.14999999999999997Q214.4 -0.6000000000000001 212.2 -3.05Q210.0 -5.5 210.0 -10.0V-76.9L224.0 -80.0V-10.0Q224.0 -7.5 225.1 -6.35Q226.2 -5.2 227.8 -4.95Q229.4 -4.7 231.0 -5.050000000000001Q232.6 -5.4 233.5 -5.800000000000001Z M250.9 0.0V-14.0H265.5V0.0ZM225.0 15.0Q229.4 16.2 232.25 15.9Q235.1 15.600000000000001 236.7 14.200000000000001Q238.3 12.8 238.9 10.65Q239.5 8.5 239.5 6.0V-30.900000000000002L253.5 -34.0V6.0Q253.5 11.3 251.25 14.65Q249.0 18.0 245.4 19.55Q241.8 21.1 237.85000000000002 21.0Q233.9 20.900000000000002 230.45 19.35Q227.0 17.8 225.0 15.0Z M273.5 0.0V-14.0H295.5V0.0ZM261.5 0.0V-14.0H269.5V-30.900000000000002L283.5 -34.0V-2.3000000000000003Q283.5 -1.1 282.5 -0.6000000000000001Q281.5 -0.1 280.5 -0.05Q279.5 0.0 279.5 0.0Z M291.5 0.0V-14.0H311.5L316.2 0.0ZM315.9 0.0Q311.3 0.0 307.4 -2.3000000000000003Q303.5 -4.6000000000000005 301.15 -8.5Q298.8 -12.4 298.8 -17.0Q298.8 -21.700000000000003 301.15 -25.550000000000004Q303.5 -29.400000000000002 307.4 -31.700000000000003Q311.3 -34.0 316.0 -34.0Q320.6 -34.0 324.4 -31.700000000000003Q328.2 -29.400000000000002 330.5 -25.550000000000004Q332.8 -21.700000000000003 332.8 -17.0Q332.8 -12.3 330.5 -8.450000000000001Q328.2 -4.6000000000000005 324.4 -2.3000000000000003Q320.6 0.0 315.9 0.0ZM315.9 -14.0Q317.2 -14.0 318.0 -14.850000000000001Q318.8 -15.700000000000001 318.8 -17.0Q318.8 -18.3 318.0 -19.15Q317.2 -20.0 315.9 -20.0Q314.6 -20.0 313.70000000000005 -19.15Q312.8 -18.3 312.8 -17.0Q312.8 -15.700000000000001 313.70000000000005 -14.850000000000001Q314.6 -14.0 315.9 -14.0Z" fill="var(--ink)"/><rect x="55.0" y="-65.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="69.5" y="-65.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="178.8" y="-45.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="240.8" y="-55.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="258.8" y="9.3" width="11.4" height="11.4" fill="var(--acc)"/><rect x="273.3" y="9.3" width="11.4" height="11.4" fill="var(--acc)"/></svg></a>
-<nav aria-label="أقسام الصفحة"><a href="#mapsec">أفضل الأحياء</a><a href="#villa">حاسبة الفلل</a><a href="#calc">الحاسبة المتقدمة</a><a href="#rank">ترتيب الأراضي</a><a href="#fb">رأيك</a></nav></div></div>
-<header class="band" id="top"><div class="wrap hero">
+<nav class="tabs" aria-label="الأقسام"><a href="#home" data-v="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>الرئيسية</a><a href="#map" data-v="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14"/></svg>الأحياء</a><a href="#villa" data-v="villa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18 M5 20V10l5-4 5 4v10 M15 20v-7h4v7"/></svg>مشروع فلل</a><a href="#calc" data-v="calc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z M4 10h16 M10 10v10"/></svg>تقييم أرض</a><a href="#more" data-v="more"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h.01 M12 12h.01 M19 12h.01"/></svg>المزيد</a></nav></div></div>
+<header class="band" id="top" data-view="home"><div class="wrap hero">
 <div>
 <span class="beta"><i></i>نسخة تجريبية، جربها على أرض تعرفها وقول لنا رأيك</span>
 <h1>كم تسوى الأرض <em>بالنسبة لك</em>؟</h1>
 <p class="sub">ميزان عقار يحسب أقصى سعر تدفعه في متر الأرض حسب اللي تقدر تبنيه عليها وتبيعه أو تؤجره، ويقارنه بصفقات الحي الفعلية من بيانات وزارة العدل في 112 حي بالرياض.</p>
-<div class="cta"><a class="p" href="#mapsec">وين أستثمر؟ شوف أفضل الأحياء</a><a class="s" href="#villa">احسب مشروع فلل</a></div>
-<div class="how">
-<div><b>1. اختر الحي</b>من الخريطة أو القائمة، وتتعبى أسعار السوق تلقائيا.</div>
-<div><b>2. عدل افتراضاتك</b>نظام البناء والتكاليف وربحك أو عائدك المستهدف.</div>
-<div><b>3. شوف الميزان</b>سعرك العادل مقابل سعر السوق، وهل العرض يستاهل.</div>
+<div class="tasks">
+<a href="#map"><b>وين أستثمر؟</b><span>أفضل أحياء الرياض حسب سعر الأرض والعائد</span></a>
+<a href="#villa"><b>عندي أرض وأبي أبني فلل</b><span>كم تكلف، وكم تربح، وكم تدفع في الأرض</span></a>
+<a href="#calc"><b>كم تسوى أرض معينة؟</b><span>اختر الحي والمساحة، وقارن بسعر العرض</span></a>
 </div>
+<p class="trust">مبني على صفقات وزارة العدل في 112 حي بالرياض، من يوليو 2024 إلى يونيو 2026 · <a href="#about">من نحن</a></p>
 </div>
-<svg class="motif" viewBox="0 0 480 300" aria-hidden="true"><rect class="m-sl" x="0" y="0" width="264" height="300"/><g><rect class="m-pl" x="16" y="16" width="40" height="40" rx="4"/><rect class="m-pl" x="64" y="16" width="88" height="40" rx="4"/><rect class="m-pl" x="160" y="16" width="40" height="40" rx="4"/><rect class="m-pl" x="208" y="16" width="40" height="40" rx="4"/><rect class="m-pl" x="16" y="64" width="40" height="40" rx="4"/><rect class="m-pl" x="64" y="64" width="40" height="40" rx="4"/><rect class="m-pl" x="112" y="64" width="40" height="40" rx="4"/><rect class="m-pl" x="160" y="64" width="40" height="40" rx="4"/><rect class="m-pl" x="208" y="64" width="40" height="40" rx="4"/><rect class="m-pl" x="16" y="112" width="40" height="40" rx="4"/><rect class="m-pl" x="64" y="112" width="40" height="40" rx="4"/><rect class="m-pl" x="112" y="112" width="40" height="40" rx="4"/><rect class="m-pl" x="160" y="112" width="88" height="40" rx="4"/><rect class="m-pl" x="16" y="160" width="40" height="40" rx="4"/><rect class="m-pl" x="64" y="160" width="40" height="40" rx="4"/><rect class="m-pl" x="112" y="160" width="40" height="40" rx="4"/><rect class="m-pl" x="160" y="160" width="40" height="40" rx="4"/><rect class="m-pl" x="208" y="160" width="40" height="40" rx="4"/><rect class="m-pl" x="16" y="208" width="88" height="40" rx="4"/><rect class="m-pl" x="112" y="208" width="40" height="40" rx="4"/><rect class="m-pl" x="160" y="208" width="40" height="40" rx="4"/><rect class="m-pl" x="208" y="208" width="40" height="40" rx="4"/><rect class="m-pl" x="16" y="256" width="40" height="40" rx="4"/><rect class="m-pl" x="64" y="256" width="40" height="40" rx="4"/><rect class="m-pl" x="112" y="256" width="40" height="40" rx="4"/><rect class="m-pl" x="160" y="256" width="40" height="40" rx="4"/><rect class="m-pl" x="208" y="256" width="40" height="40" rx="4"/></g><rect class="m-oc" x="264" y="0" width="216" height="170"/><rect class="m-ink" x="264" y="170" width="216" height="130"/>
-<g transform="translate(316 34) scale(1.75)"><rect x="6" y="17" width="52" height="5" rx="2.5" fill="#16191D"/><path d="M32 22 L47 50 L17 50 Z" fill="#FFFFFF"/><path d="M10 22 V29 M54 22 V29" stroke="#16191D" stroke-width="2"/><rect x="3" y="29" width="14" height="12" rx="1.5" fill="#2F5D6B"/><rect x="47" y="29" width="14" height="12" rx="1.5" fill="#2F5D6B"/></g></svg>
 </div></header>
 
-<section class="band" id="mapsec" style="padding-bottom:0"><div class="wrap mapgrid">
+<section class="band" id="mapsec" data-view="map" style="padding-bottom:0"><div class="wrap mapgrid">
 <div class="map" id="map"><svg id="msvg" role="img" aria-label="خريطة أحياء الرياض"></svg><div class="tip" id="tip"></div></div>
 <div class="mside">
 <h2>خريطة أحياء الرياض</h2>
@@ -246,7 +291,7 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 </div>
 </div></section>
 
-<section class="band vil" id="villa" style="border-top:4px solid var(--ink)"><div class="wrap">
+<section class="band vil" id="villa" data-view="villa"><div class="wrap">
 <h2>حاسبة مشروع فلل</h2>
 <p class="note" style="margin:0 0 18px">عندك أرض وتبي تقسمها فلل وتبيعها؟ عبّ أربع خانات، ونطلع لك كم تكلف الأرض والبناء، وكم تبيع، وكم تربح.</p>
 <div class="vgrid">
@@ -289,22 +334,26 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 <p class="note" style="margin-top:12px">الأرقام تقديرية. تكلفة العظم من متوسطات السوق 2026 (650 إلى 850 ريال للمتر)، والتشطيب يتغير كثير حسب المواد. تأكد من نظام البناء وأقل مساحة مسموحة للتقسيم من منصة بلدي.</p>
 </div>
 </div></div></section>
-<main class="band" id="calc"><div class="wrap grid">
+<main class="band" id="calc" data-view="calc"><div class="wrap grid">
 <form id="f" autocomplete="off" data-mode="sale">
 <div class="dist">
 <label for="dsel">الحي في الرياض</label>
 <select id="dsel"><option value="">اختر حي لتعبئة أسعار السوق</option></select>
 <div id="dinfo"></div>
 </div>
+<div class="modes" role="group" aria-label="نوع المشروع"><button type="button" id="mdSale" aria-pressed="true">بناء وبيع</button><button type="button" id="mdRent" aria-pressed="false">بناء وتأجير</button></div>
+<div class="simple"><div class="row"><label for="area">مساحة الأرض</label><div class="in"><input id="area" type="number" inputmode="decimal" min="0"><span>م²</span></div></div>
+<div class="row"><label for="ask">سعر المتر المعروض<small>اختياري، عشان نقارن</small></label><div class="in"><input id="ask" type="number" inputmode="decimal" min="0"><span>ريال</span></div></div>
+</div>
+<details class="adv"><summary>عدل الافتراضات <small>نظام البناء والتكاليف والربح، اختياري</small></summary>
 <div class="presets" aria-label="أمثلة جاهزة">
 <button type="button" data-p="villa">فيلا سكنية</button>
 <button type="button" data-p="apt">عمارة شقق</button>
 <button type="button" id="reset">مسح</button>
 </div>
 
-<div class="modes" role="group" aria-label="نوع المشروع"><button type="button" id="mdSale" aria-pressed="true">بناء وبيع</button><button type="button" id="mdRent" aria-pressed="false">بناء وتأجير</button></div>
+
 <fieldset><legend>الأرض ونظام البناء</legend>
-<div class="row"><label for="area">مساحة الأرض</label><div class="in"><input id="area" type="number" inputmode="decimal" min="0"><span>م²</span></div></div>
 <div class="row"><label for="cov">نسبة التغطية<small>من مساحة الأرض في الدور الأرضي</small></label><div class="in"><input id="cov" type="number" inputmode="decimal" min="0" max="100"><span>%</span></div></div>
 <div class="row"><label for="fl">عدد الأدوار المسموحة<small>بدون الملحق</small></label><div class="in"><input id="fl" type="number" inputmode="decimal" min="0"><span>دور</span></div></div>
 <div class="row"><label for="ann">الملحق العلوي<small>نسبة من مساحة الدور الواحد</small></label><div class="in"><input id="ann" type="number" inputmode="decimal" min="0"><span>%</span></div></div>
@@ -321,10 +370,7 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 <div class="row m-rent"><label for="yld">العائد الصافي المستهدف<small>سنويا على كامل الاستثمار</small></label><div class="in"><input id="yld" type="number" inputmode="decimal" min="0"><span>%</span></div></div>
 <div class="row m-sale"><label for="pro">ربحك المستهدف<small>من الإيراد</small></label><div class="in"><input id="pro" type="number" inputmode="decimal" min="0"><span>%</span></div></div>
 </fieldset>
-
-<fieldset><legend>المقارنة مع العرض</legend>
-<div class="row"><label for="ask">سعر المتر المعروض<small>اختياري</small></label><div class="in"><input id="ask" type="number" inputmode="decimal" min="0"><span>ريال</span></div></div>
-</fieldset>
+</details>
 </form>
 
 <section class="res" id="resTop" aria-live="polite">
@@ -348,13 +394,15 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 </section>
 </div></main>
 
-<section class="band" style="border-top:1px solid var(--line)"><div class="wrap">
+<section class="band" data-view="calc" style="border-top:1px solid var(--line)"><div class="wrap">
 <h2>لو تغير السوق</h2>
 <p class="note">سعر المتر العادل للأرض لو تغير سعر البيع أو تكلفة البناء بنسبة 10%. الخانة الملونة هي حالتك الحالية.</p>
 <div class="scroll"><table id="sens"></table></div>
 </div></section>
 
-<section class="band rk" id="rank" style="border-top:4px solid var(--ink)"><div class="wrap">
+<section class="band rk" id="rank" data-view="rank"><div class="wrap">
+<a class="back" href="#more"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>المزيد</a>
+
 <h2>رتب الأراضي المعروضة كفرص استثمار</h2>
 <p class="note">الصق قائمة أراضي معروضة للبيع، والأداة ترتبها بناء على ربحك المتوقع لو اشتريت بالسعر المعروض، وسعرها مقارنة بصفقات الحي، وسيولة الحي واتجاه أسعاره. الحسبة تستخدم نسب البناء والتكاليف والربح اللي في الحاسبة فوق.</p>
 <div class="rkin" style="margin-top:16px">
@@ -374,7 +422,9 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 <div class="btns"><button type="button" id="rCopy" hidden>نسخ الترتيب</button></div>
 </div></section>
 
-<section class="band" id="fb" style="border-top:1px solid var(--line)"><div class="wrap">
+<section class="band" id="fb" data-view="fb"><div class="wrap">
+<a class="back" href="#more"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>المزيد</a>
+
 <h2>جربتها؟ قول لنا رأيك</h2>
 <p class="note">إذا عندك خبرة في الحي اللي اخترته، اكتب الأرقام اللي تشوفها واقعية. الحاسبة تجهز رسالة فيها حسبتك وملاحظاتك، وتقدر ترسلها بواتساب أو تنسخها.</p>
 <div class="fb">
@@ -386,7 +436,9 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 <div class="btns"><a class="btn" id="wa" href="https://wa.me/" target="_blank" rel="noopener">أرسلها بواتساب</a><button type="button" id="fCopy">نسخ الرسالة</button></div>
 </div></section>
 
-<section class="band" style="background:var(--panel)"><div class="wrap">
+<section class="band" id="method" data-view="method"><div class="wrap">
+<a class="back" href="#more"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>المزيد</a>
+
 <h2>كيف تنحسب</h2>
 <div class="steps">
 <div><b>1. المساحة المبنية</b>الأرض × التغطية × الأدوار، ويضاف الملحق.</div>
@@ -399,13 +451,40 @@ td.base{background:var(--panel);font-weight:700;color:var(--acc)}
 <p class="note" style="margin-top:18px">الأمثلة الجاهزة أرقامها افتراضية للتوضيح. النتيجة تقدير مبدئي يعتمد على دقة مدخلاتك، وليست تقييما رسميا ولا تغني عن مقيم معتمد من الهيئة السعودية للمقيمين المعتمدين. تأكد من نظام البناء الفعلي للقطعة من منصة بلدي. أسعار الأحياء وقيمة السوق من صفقات وزارة العدل في الرياض من يوليو 2024 إلى يونيو 2026، بعد فرز الأراضي عن الوحدات بنموذج تصنيف، واستبعاد مبيعات المشاريع بالجملة (عشرات القطع بنفس السعر في نفس الشهر). سعر بيع المتر المبني مأخوذ من صفقات الشقق في الحي، وهي غالبا إعادة بيع، فالمباني الجديدة عادة أغلى منها. حدود الأحياء من مشروع Saudi-Arabia-Regions-Cities-and-Districts المفتوح (مصدره العنوان الوطني).</p>
 </div></section>
 
+<section class="band" id="more" data-view="more"><div class="wrap narrow">
+<h2>المزيد</h2>
+<ul class="menu"><li><a href="#rank"><span><b>ترتيب الأراضي المعروضة</b><small>الصق قائمة أراضي من الإعلانات ونرتبها لك كفرص</small></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a></li><li><a href="#method"><span><b>كيف تنحسب</b><small>طريقة الحساب، ودقة التقديرات، وحدودها</small></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a></li><li><a href="#about"><span><b>من نحن</b><small>وش ميزان عقار، ومبادئنا في استخدام البيانات</small></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a></li><li><a href="#sources"><span><b>مصادر البيانات</b><small>من وين الأرقام، وتراخيصها</small></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a></li><li><a href="#fb"><span><b>أرسل رأيك</b><small>عندك خبرة في حي؟ صحح لنا الأرقام</small></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a></li></ul>
+</div></section>
+<section class="band" id="about" data-view="about"><div class="wrap narrow">
+<a class="back" href="#more"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>المزيد</a>
+<h2>من نحن</h2>
+<p class="lead2">ميزان عقار أداة مستقلة ومجانية، تساعد المستثمر والمطور في الرياض يعرف كم تسوى الأرض بالنسبة لمشروعه، قبل ما يشتري.</p>
+<p>سعر الأرض المعروض يحدده البائع، وكثير من القرارات تنبني عليه. فكرتنا بسيطة: نحط في كفة سعر العرض، وفي الكفة الثانية القيمة اللي يتحملها مشروعك وأسعار الصفقات الفعلية في الحي، وتقرر أنت.</p>
+<h3>مبادئنا</h3>
+<div class="princ">
+<div><b>بيانات نظامية فقط</b><span>نستخدم مصادر رسمية مفتوحة ومرخصة، ونتحقق من ترخيص كل مصدر قبل استخدامه، ونذكر المصدر.</span></div>
+<div><b>صراحة في الدقة</b><span>كل تقدير معه نطاق خطئه. التقديرات الحالية فرقها الوسيط عن الأسعار الفعلية قرابة 20%.</span></div>
+<div><b>خصوصيتك</b><span>ما نطلب تسجيل. مدخلاتك تنحفظ في متصفحك بس، وما توصلنا.</span></div>
+<div><b>مو بديل عن المقيم</b><span>النتائج تقديرية تساعدك في القرار، ولا تغني عن تقييم مقيم معتمد من الهيئة السعودية للمقيمين المعتمدين.</span></div>
+</div>
+<h3>وين وصلنا</h3>
+<p>نغطي 112 حي في الرياض من صفقات وزارة العدل بين يوليو 2024 ويونيو 2026، ونشتغل على الحصول على بيانات أدق بشكل نظامي عشان نرفع الدقة.</p>
+<h3 id="sources">مصادر البيانات</h3>
+<ul class="src">
+<li><b>صفقات البيع:</b> وزارة العدل، عبر البوابة الوطنية للبيانات المفتوحة.</li>
+<li><b>الإيجارات:</b> مؤشر الإيجار لمنطقة الرياض، الربع الأول 2026، الهيئة العامة للعقار، عبر منصة البيانات المفتوحة.</li>
+<li>المصدرين منشورين برخصة <a href="https://open.data.gov.sa/en/pages/policies/license">البيانات المفتوحة في المملكة</a>.</li>
+<li><b>حدود الأحياء:</b> مشروع homaily/Saudi-Arabia-Regions-Cities-and-Districts برخصة GPL-2.0، بعد تبسيط الأشكال. الحدود تقريبية وتجريبية.</li>
+</ul>
+<p class="note">عندك ملاحظة أو خبرة في حي معين؟ <a href="#fb">أرسل لنا رأيك</a>.</p>
+</div></section>
 <footer class="band ft"><div class="wrap">
 <div class="cols">
 <div><svg class="logo" role="img" aria-label="ميزان عقار" viewBox="-14.5 -86.0 353.3 113.0"><path d="M-8.5 15.0Q-4.1000000000000005 16.2 -1.2500000000000002 15.9Q1.6 15.600000000000001 3.2 14.200000000000001Q4.800000000000001 12.8 5.4 10.65Q6.0 8.5 6.0 6.0V-30.900000000000002L20.0 -34.0V6.0Q20.0 11.3 17.75 14.65Q15.5 18.0 11.9 19.55Q8.3 21.1 4.3500000000000005 21.0Q0.4 20.900000000000002 -3.05 19.35Q-6.5 17.8 -8.5 15.0Z M29.0 0.0Q29.0 0.0 28.0 -0.05Q27.0 -0.1 26.0 -0.6000000000000001Q25.0 -1.1 25.0 -2.3000000000000003V-76.9L39.0 -80.0V-14.0H47.0V0.0Z M79.0 0.0V-14.0H97.0V0.0ZM43.0 0.0V-14.0H71.0V-26.8L85.0 -34.0V-2.3000000000000003Q85.0 -1.1 84.0 -0.6000000000000001Q83.0 -0.1 82.0 -0.05Q81.0 0.0 81.0 0.0ZM68.1 -17.0Q63.5 -17.0 59.6 -19.3Q55.7 -21.6 53.35 -25.5Q51.0 -29.400000000000002 51.0 -34.0Q51.0 -38.7 53.35 -42.550000000000004Q55.7 -46.400000000000006 59.6 -48.7Q63.5 -51.0 68.2 -51.0Q72.8 -51.0 76.6 -48.7Q80.4 -46.400000000000006 82.7 -42.550000000000004Q85.0 -38.7 85.0 -34.0Q85.0 -29.3 82.7 -25.450000000000003Q80.4 -21.6 76.6 -19.3Q72.8 -17.0 68.1 -17.0ZM68.1 -31.0Q69.4 -31.0 70.2 -31.85Q71.0 -32.7 71.0 -34.0Q71.0 -35.300000000000004 70.2 -36.150000000000006Q69.4 -37.0 68.1 -37.0Q66.8 -37.0 65.9 -36.150000000000006Q65.0 -35.300000000000004 65.0 -34.0Q65.0 -32.7 65.9 -31.85Q66.8 -31.0 68.1 -31.0Z M91.0 0.0V-14.0H100.7Q100.3 -15.3 100.0 -16.9Q99.7 -18.5 99.9 -20.200000000000003Q100.1 -21.900000000000002 101.1 -23.400000000000002Q102.8 -26.1 106.0 -27.900000000000002Q109.2 -29.700000000000003 114.7 -31.200000000000003Q120.2 -32.7 128.7 -34.300000000000004L129.4 -33.4Q122.2 -30.1 119.05000000000001 -27.650000000000002Q115.9 -25.200000000000003 114.7 -23.200000000000003Q114.1 -22.200000000000003 114.25 -20.800000000000004Q114.4 -19.400000000000002 115.1 -18.400000000000002Q116.6 -16.6 118.15 -15.3Q119.7 -14.0 122.0 -14.0H146.0L140.1 0.0Z  M183.8 20.400000000000002Q180.1 20.400000000000002 176.55 19.150000000000002Q173.0 17.900000000000002 170.15 15.350000000000001Q167.3 12.8 165.65 9.0Q164.0 5.2 164.0 0.0Q164.0 -4.4 165.85 -8.4Q167.7 -12.4 170.6 -15.55Q173.5 -18.7 176.6 -20.700000000000003Q176.8 -18.8 176.3 -16.950000000000003Q175.8 -15.100000000000001 174.6 -13.5Q175.7 -13.0 176.45 -11.5Q177.2 -10.0 177.5 -8.4Q177.8 -6.800000000000001 177.5 -5.800000000000001Q176.5 -6.6000000000000005 175.5 -7.0Q174.5 -7.4 173.5 -7.4Q171.3 -7.4 169.7 -5.25Q168.1 -3.1 168.1 0.0Q168.1 4.4 169.8 7.3500000000000005Q171.5 10.3 174.2 11.700000000000001Q176.9 13.100000000000001 179.9 13.100000000000001Q183.1 13.100000000000001 186.0 11.55Q188.9 10.0 190.75 6.95Q192.6 3.9000000000000004 192.6 -0.6000000000000001Q192.6 -2.8000000000000003 191.95 -4.95Q191.3 -7.1000000000000005 190.35000000000002 -9.100000000000001Q189.4 -11.100000000000001 188.4 -12.600000000000001L195.2 -26.200000000000003Q199.0 -21.6 202.0 -15.450000000000001Q205.0 -9.3 205.0 -0.5Q205.0 6.300000000000001 201.9 11.0Q198.8 15.700000000000001 193.95 18.05Q189.1 20.400000000000002 183.8 20.400000000000002Z M233.5 -5.800000000000001Q232.9 -3.6 230.35000000000002 -1.9500000000000002Q227.8 -0.30000000000000004 224.35000000000002 0.3Q220.9 0.9 217.65 0.14999999999999997Q214.4 -0.6000000000000001 212.2 -3.05Q210.0 -5.5 210.0 -10.0V-76.9L224.0 -80.0V-10.0Q224.0 -7.5 225.1 -6.35Q226.2 -5.2 227.8 -4.95Q229.4 -4.7 231.0 -5.050000000000001Q232.6 -5.4 233.5 -5.800000000000001Z M250.9 0.0V-14.0H265.5V0.0ZM225.0 15.0Q229.4 16.2 232.25 15.9Q235.1 15.600000000000001 236.7 14.200000000000001Q238.3 12.8 238.9 10.65Q239.5 8.5 239.5 6.0V-30.900000000000002L253.5 -34.0V6.0Q253.5 11.3 251.25 14.65Q249.0 18.0 245.4 19.55Q241.8 21.1 237.85000000000002 21.0Q233.9 20.900000000000002 230.45 19.35Q227.0 17.8 225.0 15.0Z M273.5 0.0V-14.0H295.5V0.0ZM261.5 0.0V-14.0H269.5V-30.900000000000002L283.5 -34.0V-2.3000000000000003Q283.5 -1.1 282.5 -0.6000000000000001Q281.5 -0.1 280.5 -0.05Q279.5 0.0 279.5 0.0Z M291.5 0.0V-14.0H311.5L316.2 0.0ZM315.9 0.0Q311.3 0.0 307.4 -2.3000000000000003Q303.5 -4.6000000000000005 301.15 -8.5Q298.8 -12.4 298.8 -17.0Q298.8 -21.700000000000003 301.15 -25.550000000000004Q303.5 -29.400000000000002 307.4 -31.700000000000003Q311.3 -34.0 316.0 -34.0Q320.6 -34.0 324.4 -31.700000000000003Q328.2 -29.400000000000002 330.5 -25.550000000000004Q332.8 -21.700000000000003 332.8 -17.0Q332.8 -12.3 330.5 -8.450000000000001Q328.2 -4.6000000000000005 324.4 -2.3000000000000003Q320.6 0.0 315.9 0.0ZM315.9 -14.0Q317.2 -14.0 318.0 -14.850000000000001Q318.8 -15.700000000000001 318.8 -17.0Q318.8 -18.3 318.0 -19.15Q317.2 -20.0 315.9 -20.0Q314.6 -20.0 313.70000000000005 -19.15Q312.8 -18.3 312.8 -17.0Q312.8 -15.700000000000001 313.70000000000005 -14.850000000000001Q314.6 -14.0 315.9 -14.0Z" fill="var(--ink)"/><rect x="55.0" y="-65.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="69.5" y="-65.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="178.8" y="-45.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="240.8" y="-55.7" width="11.4" height="11.4" fill="var(--acc)"/><rect x="258.8" y="9.3" width="11.4" height="11.4" fill="var(--acc)"/><rect x="273.3" y="9.3" width="11.4" height="11.4" fill="var(--acc)"/></svg><p>قيمة الأرض الحقيقية، قبل ما تشتري.</p><p>النتائج تقديرية للمساعدة في القرار، ولا تغني عن تقييم مقيم معتمد من الهيئة السعودية للمقيمين المعتمدين.</p></div>
-<div><h3>مصادر البيانات</h3><ul><li>صفقات البيع: وزارة العدل، عبر البوابة الوطنية للبيانات المفتوحة</li><li>الإيجارات: مؤشر الإيجار لمنطقة الرياض، الربع الأول 2026، الهيئة العامة للعقار، عبر منصة البيانات المفتوحة</li><li>المصادر منشورة برخصة <a href="https://open.data.gov.sa/en/pages/policies/license" style="color:var(--accd)">البيانات المفتوحة في المملكة</a></li><li>حدود الأحياء: مشروع homaily/Saudi-Arabia-Regions-Cities-and-Districts برخصة GPL-2.0، بعد تبسيط الأشكال</li></ul></div>
-<div><h3>الأقسام</h3><ul><li><a href="#mapsec" style="color:var(--accd)">خريطة الأحياء</a></li><li><a href="#calc" style="color:var(--accd)">الحاسبة</a></li><li><a href="#rank" style="color:var(--accd)">ترتيب الأراضي المعروضة</a></li><li><a href="#fb" style="color:var(--accd)">أرسل رأيك</a></li></ul></div>
+<div><h3>الأدوات</h3><ul><li><a href="#map">أفضل الأحياء</a></li><li><a href="#villa">حاسبة مشروع فلل</a></li><li><a href="#calc">تقييم أرض</a></li><li><a href="#rank">ترتيب الأراضي المعروضة</a></li></ul></div>
+<div><h3>عن ميزان عقار</h3><ul><li><a href="#about">من نحن</a></li><li><a href="#method">كيف تنحسب</a></li><li><a href="#sources">مصادر البيانات</a></li><li><a href="#fb">أرسل رأيك</a></li></ul></div>
 </div>
-<p class="copy">© 2026 ميزان عقار. نسخة تجريبية.</p>
+<p class="copy">© 2026 ميزان عقار · نسخة تجريبية · البيانات من وزارة العدل والهيئة العامة للعقار برخصة <a href="https://open.data.gov.sa/en/pages/policies/license">البيانات المفتوحة</a></p>
 </div></footer>
 <a id="mbar" href="#resTop"><span>سعرك العادل <b id="mbarV">0</b> ريال/م²</span><span>النتيجة ↓</span></a>
 <script>
@@ -517,7 +596,7 @@ const INV=(()=>{const b=.6*2.25,c=b*2000,out={};const rows=[];
  return out})();
 const INVC=[['فرصة قوية','light-dark(#2f6b3a,#6fc27f)'],['فرصة جيدة','light-dark(#8fc29b,#3f7a4c)'],['سعر عادل','light-dark(#cfd5da,#4a525a)'],['أغلى من دخلها','light-dark(#e8a29b,#9b3a33)'],['بيانات غير كافية أو غير موثوقة','light-dark(#e9c487,#8a6a2a)']];
 function invTop(){const t=Object.values(INV).filter(r=>!r.sus&&r.cat<=1).sort((a,b)=>b.score-a.score).slice(0,10);
- $('invtop').innerHTML=`<h3 style="font-size:17px;margin:14px 0 6px">أفضل الأحياء للاستثمار الحين</h3><ol class="itop">${t.map(r=>`<li data-d="${r.d}"><div class="ih"><b>${r.d}</b><span class="isc" style="background:${INVC[r.cat][1]}">${r.score}</span></div><p>${n(r.m)} ريال/م² · ${r.why.join(' · ')}</p>${r.risk.length?`<p class="irk">⚠ ${r.risk.join(' · ')}</p>`:''}</li>`).join('')}</ol><p class="note" style="font-size:12px">الدرجة من 100: رخص السعر مقارنة بدخل الإيجار (60)، اتجاه الأسعار (25)، وحجم الصفقات (15). دقة تقدير الدخل قرابة ±19%، فاعتبرها بداية للبحث مو قرار نهائي.</p>`;
+ $('invtop').innerHTML=`<h3 style="font-size:17px;margin:14px 0 6px">أفضل الأحياء للاستثمار الحين</h3><ol class="itop">${t.map(r=>`<li data-d="${r.d}"><div class="ih"><b>${r.d}</b><span class="isc" style="background:${INVC[r.cat][1]}">${r.score}</span></div><p>${n(r.m)} ريال/م² · ${r.why.join(' · ')}</p>${r.risk.length?`<p class="irk">⚠ ${r.risk.join(' · ')}</p>`:''}</li>`).join('')}</ol><button type="button" class="more" onclick="const o=this.previousElementSibling;o.classList.toggle('all');this.textContent=o.classList.contains('all')?'عرض أقل':'عرض الكل'">عرض الكل</button><p class="note" style="font-size:12px">الدرجة من 100: رخص السعر مقارنة بدخل الإيجار (60)، اتجاه الأسعار (25)، وحجم الصفقات (15). دقة تقدير الدخل قرابة ±19%، فاعتبرها بداية للبحث مو قرار نهائي.</p>`;
  $('invtop').querySelectorAll('li').forEach(li=>li.addEventListener('click',()=>{$('dsel').value=li.dataset.d;$('dsel').dispatchEvent(new Event('change'))}))}
 
 let mode='inv';
@@ -784,6 +863,23 @@ vd.value='النرجس';fill();invTop();}
 }
 {const g=i=>document.getElementById(i),f=g('f'),rt=g('resTop'),bar=g('mbar');let fv=false,rv=false;const up=()=>bar.classList.toggle('on',fv&&!rv);
 if(window.IntersectionObserver&&f&&rt){new IntersectionObserver(e=>{fv=e[0].isIntersecting;up()}).observe(f);new IntersectionObserver(e=>{rv=e[0].isIntersecting;up()},{threshold:.15}).observe(rt)}}
+</script>
+<script>
+(function(){
+const V={home:1,map:1,villa:1,calc:1,more:1,rank:1,method:1,about:1,fb:1};
+const G={rank:'more',method:'more',about:'more',fb:'more'};
+const T={home:'كم تسوى الأرض؟',map:'أفضل الأحياء',villa:'حاسبة مشروع فلل',calc:'تقييم أرض',more:'المزيد',rank:'ترتيب الأراضي',method:'كيف تنحسب',about:'من نحن',fb:'أرسل رأيك'};
+function route(){
+ const h=(location.hash||'#home').slice(1);let v=h,el=null;
+ if(!V[h]){el=document.getElementById(h);const w=el&&el.closest('[data-view]');v=w?w.dataset.view:'home';}
+ document.querySelectorAll('[data-view]').forEach(e=>e.hidden=e.dataset.view!==v);
+ const g=G[v]||v;document.querySelectorAll('nav.tabs a').forEach(a=>{if(a.dataset.v===g)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+ document.title='ميزان عقار | '+(T[v]||T.home);
+ if(el&&!el.matches('[data-view]'))requestAnimationFrame(()=>el.scrollIntoView({block:'start'}));else window.scrollTo(0,0);
+ window.dispatchEvent(new Event('resize'));
+}
+addEventListener('hashchange',route);route();
+})();
 </script>
 </body>
 </html>
